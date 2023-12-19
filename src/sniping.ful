@@ -1,6 +1,7 @@
-import <libraies.ful>
+import 'libraies.ful'
 import <instance>
 import <api>
+import <requests>
 
 int main() {
     update();
@@ -43,7 +44,7 @@ void apiconnect()
 {  
     while true() {
         browserpage();
-        WebClient WebClient = Webclient.Create();
+        WebClient WebClient = WebClient.Create();
         WebClient.Send(GET::"https://api.mojang.com/user/profiles/<UUIDasked>/names");
         Webclient.Wait.OnRecieve(Payload = true);
         WebClient.Send(POST::"https://api.mojang.com/user/profiles/<UUIDasked>/names"::RESPONSE.GET);
